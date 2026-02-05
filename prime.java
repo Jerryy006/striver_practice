@@ -14,7 +14,6 @@ public class prime{
             for(int div=1; div<=n; div++){
              if(n%div==0){
                     count++;
-                    break;
                 }
             }
 
