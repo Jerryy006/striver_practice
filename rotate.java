@@ -1,37 +1,45 @@
 
+/*rotate the given the number */
+
+import java.util.*;
+
 public class rotate{
 
     public static void main(String[]args){
 
         Scanner sc = new Scanner(System.in);
         System.out.println("enter the number:");
-        int num = sc.nextInt();
+        int n = sc.nextInt();
+        System.out.println("enter the rotation value:");
+        int k = sc.nextInt();
 
-        int temp = num;
-        int a;
-        int divisor = 1;
-        int multiplyer = 1;
-        
-
+        int temp = n;
+        int nod = 0;
+         
         while(temp>0){
-            temp = temp / 10;        
-            a++;
-    }
-          k = k % a;
-}
-        for(int i = 1; i<=a; i++){
-            if(i>=k){
-                divisor = divisor * 10;
-            }
-            else{
-                multiplyer = multiplyer * 10;
+            temp = temp / 10;
+            nod++;
+        }
+
+        k = k % nod;
+        if(k<0){
+            k=k+nod;
+        }
+
+        int div = 1;
+        int mult = 1;
+        for(int i = 1; i<=nod; i++){
+            if(i<=k){
+                div = div*10;
+            }else{
+                mult = mult*10;
             }
         }
-            int last = num % divisor;
-            int first = num / divisor;
+    
+        int q = n / div;
+        int r = n % div;
 
-            int result = last * multiplyer + first;
-
-            System.out.println("result"+result);
+        int rot = r * mult + q;
+        System.out.println(rot);
     }
-            
+}
